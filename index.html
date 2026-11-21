@@ -88,7 +88,7 @@
   chart after a voting-machine issue. Small island states with no polygon on the map
   are shown as dots. Grey areas are not UN member states and do not vote;
   Greenland votes through Denmark.</p>
-  <p>Map: OpenStreetMap contributors, CARTO dark tiles. Country shapes are simplified.</p>
+  <p>Map: Esri dark grey tiles. Country shapes are simplified.</p>
 </footer>
 <script src="leaflet/leaflet.js"></script>
 <script>
@@ -111,9 +111,9 @@ var GROUP_TITLE = {
 
 var map = L.map("map", {worldCopyJump:true, minZoom:2, maxZoom:7, zoomControl:true});
 map.fitBounds([[-58,-168],[83,190]]);
-L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-  subdomains:"abcd", maxZoom:19
+L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+  attribution:'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+  maxZoom:16
 }).addTo(map);
 
 var layers = {};   // ISO3 -> layer
